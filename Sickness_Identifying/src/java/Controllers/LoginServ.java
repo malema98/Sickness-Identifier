@@ -54,6 +54,7 @@ public class LoginServ extends HttpServlet {
         
         PreparedStatement ps;
         ResultSet rs;
+        //SQL query for trieving username and password from mySQL database
         String sql="SELECT * FROM `users` WHERE `username`=? and `password`=?";
         try
         {
