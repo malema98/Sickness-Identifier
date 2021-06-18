@@ -24,6 +24,10 @@
         <servlet-name>Doctor_view_AppServ</servlet-name>
         <servlet-class>Controllers.Doctor_view_AppServ</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Doctor_Cancel_AppServ</servlet-name>
+        <servlet-class>Controllers.Doctor_Cancel_AppServ</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SymptoServ</servlet-name>
         <url-pattern>/SymptoServ</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>Doctor_view_AppServ</servlet-name>
         <url-pattern>/Doctor_view_AppServ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Doctor_Cancel_AppServ</servlet-name>
+        <url-pattern>/Doctor_Cancel_AppServ</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

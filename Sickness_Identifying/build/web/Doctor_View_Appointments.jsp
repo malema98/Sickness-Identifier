@@ -63,6 +63,7 @@ th {
     </center>
  <table>
     <tr>
+    <th>Book ID</th>
     <th>Username</th>
     <th>Cell Phone</th>
     <th>Email address</th>
@@ -73,6 +74,7 @@ th {
      <%while(rs.next()){%>
 
   <tr>
+      <td><%=rs.getString("BOOK_ID") %></td>
       <td><%=rs.getString("USERNAME") %></td>
       <td><%=rs.getString("CONTACTS") %></td>
       <td><%=rs.getString("EMAIL") %></td>
@@ -83,8 +85,8 @@ th {
   <%}%>
 </table>
     <center>
-    <button class="btn" style=" margin: 0.5%;position: absolute; left: 10%;" <a href="Cancel_Appointment.jsp"><strong>Cancel Appointment</strong></button>
-    <a href="Login.html" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
+        <a href="Doctor_Cancel_App.jsp"></a><button class="btn" style=" margin: 0.5%;position: absolute; left: 10%;" <strong>Cancel Appointment</strong></button>
+    <a href="Doctor_Cancel_App.jsp" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
     </center>
     </body>
 </html>
