@@ -42,7 +42,7 @@ public class Doctor_view_AppServ extends HttpServlet {
        PreparedStatement ps;
        
         ResultSet rs;
-        String query ="SELECT users.username, users.contacts,users.email,bookings.gender,bookings.appoinment_date,bookings.appoinment_time FROM users,bookings ORDER BY bookings.appoinment_date;";
+        String query ="SELECT users.username, users.contacts,users.email,bookings.book_ID,bookings.gender,bookings.appoinment_date,bookings.appoinment_time FROM users,bookings ORDER BY bookings.appoinment_date;";
         try
         {
           ps=MY_Connector.getConnection().prepareStatement(query);
