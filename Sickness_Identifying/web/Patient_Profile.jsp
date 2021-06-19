@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Patient Profile | Sickness Identifier</title>
+        <link rel="stylesheet" href="CSS/RegisterStyling.css">
         <style type="text/css">
              body{
                 background-image: url("images/doc1.jpg");
@@ -29,6 +30,7 @@
             border-collapse: collapse;
             border: 1px solid black;
             width: 50%;
+            position: left;
             }
             table.t th {
                 
@@ -67,6 +69,10 @@
             }
             
             button:hover {background-color: #4CAF50}
+            label
+            {
+                font-size: 16px;
+            }
 
         </style>
     </head>
@@ -78,19 +84,39 @@
             
         %>
     <center>
-        <h1 class="msg">Here is your Profile Information <%=rs.getString("USERNAME")%>
+        <h1 class="msg">Here is your Profile Information <%=rs.getString("USERNAME")%></h1>
         
         <table class="t">
                 <th>Attribute</th><th>Value</th>
-                <tr><td>USERNAME</td><td><%=rs.getString("USERNAME")%></td></tr>
-                <tr><td>PASSWORD:</td><td><%=rs.getString("PASSWORD")%></td></tr>
-                <tr><td>EMAIL : </td><td><%=rs.getString("EMAIL")%></td></tr>
-                <tr><td>CONTACT NO:</td><td><%=rs.getString("CONTACTS")%></td></tr>
+                <tr><td>username :</td><td><%=rs.getString("USERNAME")%></td></tr>
+                <tr><td>Password</td><td><%=rs.getString("PASSWORD")%></td></tr>
+                <tr><td>Email address : </td><td><%=rs.getString("EMAIL")%></td></tr>
+                <tr><td>Contacts Number:</td><td><%=rs.getString("CONTACTS")%></td></tr>
                 
             </table>
-            <br>
+                
+ <form method="POST" action="Patient_Update_infoServ" name="RegisterForm">
+       
+  <div class="container">
+    <h5>Edit and update your details here</h5>
+    <hr>
+    <label for="name"><b>username :</b></label><br>
+    <input type="text" name="uname" value="=<%=rs.getString("USERNAME")%>" >
+    <br>
+    <label for="pass"><b>Password :</b></label><br>
+    <input type="password" value="<%=rs.getString("PASSWORD")%>" name="pass">
+    <br>
+    <label for="regPword1"><b>Email address :</b></label><br>
+    <input type="email" value="<%=rs.getString("EMAIL")%>" name="email" >
+     <br>
+    <label for="regPword1"><b>Contacts Number :</b></label><br>
+    <input type="text" value="<%=rs.getString("CONTACTS")%>" name="contact" >
+    <br>
+<button type="submit" class="registerbtn"><strong>Update Profile</strong></button>
+  </div>
+</form>
             
-            <a href="GuestProfUpdate.jsp"><button type="button">Update Profile</button></a>
+            
         <br>
     </center>
         <div class="f">
