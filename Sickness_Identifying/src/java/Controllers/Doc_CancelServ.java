@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author CHRIS MALEMA
  */
-public class Doctor_Cancel_AppServ extends HttpServlet {
+public class Doc_CancelServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,6 +34,7 @@ public class Doctor_Cancel_AppServ extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String appointment_id="";
@@ -50,12 +51,12 @@ public class Doctor_Cancel_AppServ extends HttpServlet {
      
        if(request.getParameter("remove")!=null)
          {
-             String query="DELETE FROM `bookings` WHERE book_ID='"+appointment_id+"'";
+             String query="DELETE FROM `bookings` WHERE `book_ID`='"+appointment_id+"'";
              st.executeUpdate(query);
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Deleting a Guest</title>");            
+            out.println("<title>Deleting a an appointment</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>" + appointment_id + " has been succesfully deleted</h1>");
@@ -67,7 +68,7 @@ public class Doctor_Cancel_AppServ extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Deleting a Guest</title>");            
+            out.println("<title>Deleting a appointment</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1> An Error Occured </h1>");

@@ -63,7 +63,11 @@ th {
     </center>
  <table>
     <tr>
+<<<<<<< Updated upstream
     <th>Book ID</th>
+=======
+     <th>Book ID</th>
+>>>>>>> Stashed changes
     <th>Username</th>
     <th>Cell Phone</th>
     <th>Email address</th>
@@ -85,8 +89,14 @@ th {
   <%}%>
 </table>
     <center>
+<<<<<<< Updated upstream
         <a href="Doctor_Cancel_App.jsp"></a><button class="btn" style=" margin: 0.5%;position: absolute; left: 10%;" <strong>Cancel Appointment</strong></button>
     <a href="Doctor_Cancel_App.jsp" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
+=======
+        <a href="Doctor_Cancel_App.jsp">Click here Cancel Appointment</a>
+        <br>
+    <a href="Login.html" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
+>>>>>>> Stashed changes
     </center>
     </body>
 </html>

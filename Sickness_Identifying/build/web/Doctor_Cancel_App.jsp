@@ -104,7 +104,7 @@ img
             <center>
             <h2>All the identities for the Appointments are unique so the appointment Identity can be used to identify which appointment to delete</h2>
             <br>
-    <form method="post" action="Doctor_Cancel_AppServ">
+    <form method="post" action="Doc_CancelServ">
       <h1 ><strong>CANCEL AN APPOINTMENT</strong></h1>
     <hr>
     <i class="fa fa-user" aria-hidden="true"></i>
@@ -119,7 +119,7 @@ img
                     <option>POSTPONED</option>
     </select><br><br>
     <hr>
-    <button class="registerbtn"type="submit"  name="remove"><strong>REMOVE ROOM</strong></button>
+    <button class="registerbtn"type="submit"  name="remove"><strong>CANCEL APPOINTMENT</strong></button>
  </form>
 </center>
         <center>
