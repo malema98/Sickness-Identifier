@@ -90,7 +90,13 @@ th {
 </table>
     <center>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <a href="Doctor_Cancel_App.jsp"></a><button class="btn" style=" margin: 0.5%;position: absolute; left: 10%;" <strong>Cancel Appointment</strong></button>
+=======
+        <a href="Doctor_Cancel_App.jsp"><strong>Click here to delete an appointment</strong></a>
+        <br>
+        <br>
+>>>>>>> Stashed changes
     <a href="Doctor_Cancel_App.jsp" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
 =======
         <a href="Doctor_Cancel_App.jsp">Click here Cancel Appointment</a>
