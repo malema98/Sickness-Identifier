@@ -84,8 +84,9 @@ th {
   </tr>
   <%}%>
 </table>
+    <br>
     <center>
-        <a href="Doctor_Cancel_App.jsp"></a><button class="btn" style=" margin: 0.5%;position: absolute; left: 10%;" <strong>Cancel Appointment</strong></button>
+        <a href="Doctor_Cancel_App.jsp"></a>Click here to delete an appointment<br><br>
     <a href="Doctor_Cancel_App.jsp" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
     </center>
     </body>
