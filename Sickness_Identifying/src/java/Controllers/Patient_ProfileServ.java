@@ -9,21 +9,24 @@ import Beans.LoginBean;
 import Beans.MY_Connector;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author CHRIS MALEMA
- */
-public class LoginServ extends HttpServlet {
+
+public class Patient_ProfileServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,63 +39,28 @@ public class LoginServ extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out=response.getWriter();
-        String uname=request.getParameter("uname");
-        String pword=request.getParameter("pword");
-        String options=request.getParameter("Option");
         
-        LoginBean login=new LoginBean();
-        login.setUsername(uname);
-        login.setPassword(pword);
-        
-        LoginBean[] log=new LoginBean[3];
-        log[0]=login;
-        
-        HttpSession hs=request.getSession(true);
-        hs.setAttribute("LG", log);
-        
-        PreparedStatement ps;
+     PreparedStatement ps;
+       
         ResultSet rs;
-        //SQL query for trieving username and password from mySQL database
-        String sql="SELECT * FROM `users` WHERE `username`=? and `password`=?";
+        String query ="SELECT users.username,users.password, users.contacts,users.email,bookings.gender,bookings.street,bookings.city, bookings.province,bookings.postal_code, bookings.appoinment_date,bookings.appoinment_time FROM users,bookings ORDER BY bookings.appoinment_date;";
         try
         {
-          ps=MY_Connector.getConnection().prepareStatement(sql);
-          ps.setString(1, uname);
-          ps.setString(2, pword);
+          ps=MY_Connector.getConnection().prepareStatement(query);
+          rs=ps.executeQuery(query);
           
-          rs=ps.executeQuery();
-          if(rs.next())
-          {
-               HttpSession ms = request.getSession();
-                ms.setAttribute("LogRset", rs);
-           String s1=rs.getString("usertype");
-           if(options.equalsIgnoreCase("Patient") && (s1.equalsIgnoreCase("patient")))
-           {
-            response.sendRedirect("PatientPage.jsp");
-           }
-           else
-           if(options.equalsIgnoreCase("Doctor") && (s1.equalsIgnoreCase("doctor")))
-           {
-                 
-             response.sendRedirect("Doctor_view_AppServ");
-           }
-   
-           else
-           {
-            out.println("username/passowrd Incorrect");
-           }
-          }
-          
+        HttpSession hs=request.getSession(true);
+        hs.setAttribute("profile", rs);
+       RequestDispatcher rd = request.getRequestDispatcher("Patient_Profile.jsp");
+       rd.forward(request, response);
+
         }
         catch(Exception ex)
         {
-            Logger.getLogger(User_RegisterServ.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SymptoServ.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
