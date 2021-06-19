@@ -56,20 +56,20 @@
     </head>
     <body>
       <%
-            Date date = new Date(1);
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
-            
-            HttpSession s = request.getSession();
-            ResultSet rs = (ResultSet)s.getAttribute("LogRset");
+           Date date=new Date(0);
+           SimpleDateFormat formatter=new SimpleDateFormat("dd-MMM-yyyy");
+           HttpSession hs=request.getSession();
+           Beans.LoginBean[] lbn=(Beans.LoginBean[]) hs.getAttribute("LG");
+           
         %>
         <h1>Dashboard</h1>
         <table class="user" align="left">
-            <tr><td><img class="uname" src="images/usename.png"></td><td><%=rs.getString("USERNAME") %></td></tr>
+            <tr><td><img class="uname" src="images/usename.png"></td><td><%=lbn[0].getUsername()%></td></tr>
         </table>
         <center>
             
-            <h3>Date: <%=formatter.format(date) %></h3>
-            <h2>Welcome :<%=rs.getString("USERNAME")%> 
+        <h3>Date : <%=formatter.format(date)%></h3>
+        <h3>Welcome : <%=lbn[0].getUsername()%></h3> 
          </center>
             <p>We are very happy to see you visiting our site as you are a registered customer it does'nt matter whether it's your first time visiting our site 
                  as long as you are registered , we appreciate your loyalty 
@@ -77,7 +77,7 @@
              to keep on having you as our customer. </p>
             
             <table align='left'>
-                <tr><td><a href="GuestProfile.jsp"><button type="button">My Profile</button></a></td></tr>
+                <tr><td><a href="Patient_Profile.jsp"><button type="button">My Profile</button></a></td></tr>
                 <tr><td><a href="GuestProfUpdate.jsp"><button type="button">Update Profile</button></a></td></tr>
                 <tr><td><a href="About.jsp"><button type="button">News</button></a></td></tr>
                 <tr><td><a href="Gallery.jsp"><button type="button">Gallery</button></a></td></tr>

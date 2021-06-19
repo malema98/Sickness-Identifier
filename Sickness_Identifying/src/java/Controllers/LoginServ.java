@@ -65,10 +65,12 @@ public class LoginServ extends HttpServlet {
           rs=ps.executeQuery();
           if(rs.next())
           {
+               HttpSession ms = request.getSession();
+                ms.setAttribute("LogRset", rs);
            String s1=rs.getString("usertype");
            if(options.equalsIgnoreCase("Patient") && (s1.equalsIgnoreCase("patient")))
            {
-            response.sendRedirect("Book_Appoitment.jsp");
+            response.sendRedirect("PatientPage.jsp");
            }
            else
            if(options.equalsIgnoreCase("Doctor") && (s1.equalsIgnoreCase("doctor")))

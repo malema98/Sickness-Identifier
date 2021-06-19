@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,11 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author NDIVHO MUKWEVHO
- */
-@WebServlet(name = "GuestServ", urlPatterns = {"/GuestServ"})
+
 public class Patient_ProfileServ extends HttpServlet {
 
     /**
@@ -43,34 +40,25 @@ public class Patient_ProfileServ extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        HttpSession LoginSession = request.getSession();
-        LoginBean lBean = (LoginBean)LoginSession.getAttribute("LogSession");
-        
-        PrintWriter p = response.getWriter();
-        
-        try{ 
+     PreparedStatement ps;
+       
+        ResultSet rs;
+        String query ="SELECT users.username,users.password, users.contacts,users.email,bookings.gender,bookings.street,bookings.city, bookings.province,bookings.postal_code, bookings.appoinment_date,bookings.appoinment_time FROM users,bookings ORDER BY bookings.appoinment_date;";
+        try
+        {
+          ps=MY_Connector.getConnection().prepareStatement(query);
+          rs=ps.executeQuery(query);
+          
+        HttpSession hs=request.getSession(true);
+        hs.setAttribute("profile", rs);
+       RequestDispatcher rd = request.getRequestDispatcher("Patient_Profile.jsp");
+       rd.forward(request, response);
 
-            
-            Statement st;
-            st=MY_Connector.getConnection().createStatement();
-            
-            ResultSet LoginRset = null;
-            
-            String sql = "select * from users where USERNAME = '"+lBean.getUsername()+ "' AND PASSWORD = '"+lBean.getPassword()+"' ";
-            
-            LoginRset = st.executeQuery(sql);
-            if(LoginRset.next()){
-                HttpSession ms = request.getSession();
-                ms.setAttribute("LogRset", LoginRset);
-                RequestDispatcher rd = request.getRequestDispatcher("PatientPage.jsp");
-                rd.forward(request, response);
-            }
         }
-        
-     catch (SQLException ex)
-     {
-       Logger.getLogger(User_RegisterServ.class.getName()).log(Level.SEVERE, null, ex);
-     }
+        catch(Exception ex)
+        {
+            Logger.getLogger(SymptoServ.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 
