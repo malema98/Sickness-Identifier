@@ -119,7 +119,7 @@ img
                     <option>POSTPONED</option>
     </select><br><br>
     <hr>
-    <button class="registerbtn"type="submit"  name="remove"><strong>REMOVE ROOM</strong></button>
+    <button class="registerbtn"type="submit"  name="remove"><strong>CANCEL APPOINTMENT</strong></button>
  </form>
 </center>
         <center>
