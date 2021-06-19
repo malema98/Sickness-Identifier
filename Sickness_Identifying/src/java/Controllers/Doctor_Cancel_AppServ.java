@@ -8,24 +8,20 @@ package Controllers;
 import Beans.MY_Connector;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.Arrays;
-import java.util.List;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author CHRIS MALEMA
  */
-public class Doctor_view_AppServ extends HttpServlet {
+public class Doctor_Cancel_AppServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,25 +35,50 @@ public class Doctor_view_AppServ extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       PreparedStatement ps;
-       
-        ResultSet rs;
-        String query ="SELECT users.username, users.contacts,users.email,bookings.book_ID,bookings.gender,bookings.appoinment_date,bookings.appoinment_time FROM users,bookings ORDER BY bookings.appoinment_date;";
-        try
+        PrintWriter out = response.getWriter();
+        String appointment_id="";
+        
+        if(request.getParameter("remove")!=null)
         {
-          ps=MY_Connector.getConnection().prepareStatement(query);
-          rs=ps.executeQuery(query);
-          
-        HttpSession hs=request.getSession(true);
-        hs.setAttribute("view", rs);
-       RequestDispatcher rd = request.getRequestDispatcher("Doctor_View_Appointments.jsp");
-       rd.forward(request, response);
+         appointment_id=request.getParameter("App_ID");
+        }
 
-        }
-        catch(Exception ex)
-        {
-            Logger.getLogger(SymptoServ.class.getName()).log(Level.SEVERE, null, ex);
-        }
+     try 
+       {
+     Statement st;
+     st=MY_Connector.getConnection().createStatement();
+     
+       if(request.getParameter("remove")!=null)
+         {
+             String query="DELETE FROM `bookings` WHERE book_ID='"+appointment_id+"'";
+             st.executeUpdate(query);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Deleting a Guest</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>" + appointment_id + " has been succesfully deleted</h1>");
+            out.println("</body>");
+            out.println("</html>");
+          }
+          else
+          {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Deleting a Guest</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1> An Error Occured </h1>");
+            out.println("</body>");
+            out.println("</html>");
+           }
+     }
+     catch (SQLException ex)
+     {
+       Logger.getLogger(User_RegisterServ.class.getName()).log(Level.SEVERE, null, ex);
+     }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
