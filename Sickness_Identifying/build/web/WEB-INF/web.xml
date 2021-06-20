@@ -25,13 +25,8 @@
         <servlet-class>Controllers.Doctor_view_AppServ</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< Updated upstream
         <servlet-name>Doctor_Cancel_AppServ</servlet-name>
         <servlet-class>Controllers.Doctor_Cancel_AppServ</servlet-class>
-=======
-        <servlet-name>Doc_CancelServ</servlet-name>
-        <servlet-class>Controllers.Doc_CancelServ</servlet-class>
->>>>>>> Stashed changes
     </servlet>
     <servlet-mapping>
         <servlet-name>SymptoServ</servlet-name>
@@ -58,13 +53,8 @@
         <url-pattern>/Doctor_view_AppServ</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< Updated upstream
         <servlet-name>Doctor_Cancel_AppServ</servlet-name>
         <url-pattern>/Doctor_Cancel_AppServ</url-pattern>
-=======
-        <servlet-name>Doc_CancelServ</servlet-name>
-        <url-pattern>/Doc_CancelServ</url-pattern>
->>>>>>> Stashed changes
     </servlet-mapping>
     <session-config>
         <session-timeout>
