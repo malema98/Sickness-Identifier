@@ -75,7 +75,7 @@ public class LoginServ extends HttpServlet {
                 try
                 {
                     
-                String query ="SELECT users.username, users.contacts,users.email,bookings.book_ID,bookings.gender,bookings.appoinment_date,bookings.appoinment_time FROM users,bookings WHERE users.username=? ORDER BY bookings.appoinment_date;";
+                String query ="SELECT users.username, users.contacts,users.email,users.password, bookings.book_ID,bookings.gender,bookings.appoinment_date,bookings.appoinment_time FROM users,bookings WHERE users.username=? ORDER BY bookings.appoinment_date;";
                 ps1=MY_Connector.getConnection().prepareStatement(query);
                 ps1.setString(1, uname);
                 rs1=ps1.executeQuery();

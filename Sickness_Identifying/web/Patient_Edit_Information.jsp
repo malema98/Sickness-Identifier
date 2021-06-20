@@ -9,8 +9,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="CSS/RegisterStyling.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Edit Information | Sickness Identifier</title>
     </head>
     <body>
       <%
@@ -27,10 +28,10 @@
     <h5>Edit and update your details here</h5>
     <hr>
     <label for="name"><b>username :</b></label><br>
-    <input type="text" name="uname" value="<%=rs.getString("USERNAME")%>" >
+    <input type="text" name="uname" value="<%=rs.getString("USERNAME")%>" readonly="">
     <br>
-    <label for="pass"><b>Password :</b></label><br>
-    <input type="password" value="<%=rs.getString("PASSWORD")%>" name="pass">
+    <label for="regPword1"><b>Password :</b></label><br>
+    <input type="password" value="<%=rs.getString("PASSWORD")%>" name="pass" >
     <br>
     <label for="regPword1"><b>Email address :</b></label><br>
     <input type="email" value="<%=rs.getString("EMAIL")%>" name="email" >
