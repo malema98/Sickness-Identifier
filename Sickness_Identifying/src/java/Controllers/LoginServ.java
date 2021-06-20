@@ -53,20 +53,43 @@ public class LoginServ extends HttpServlet {
         hs.setAttribute("LG", log);
         
         PreparedStatement ps;
+        PreparedStatement ps1;
         ResultSet rs;
+        ResultSet rs1;
         //SQL query for trieving username and password from mySQL database
         String sql="SELECT * FROM `users` WHERE `username`=? and `password`=?";
+        
         try
         {
           ps=MY_Connector.getConnection().prepareStatement(sql);
+          
           ps.setString(1, uname);
           ps.setString(2, pword);
           
           rs=ps.executeQuery();
+          
           if(rs.next())
           {
                HttpSession ms = request.getSession();
                 ms.setAttribute("LogRset", rs);
+                try
+                {
+                    
+                String query ="SELECT users.username, users.contacts,users.email,bookings.book_ID,bookings.gender,bookings.appoinment_date,bookings.appoinment_time FROM users,bookings WHERE users.username=? ORDER BY bookings.appoinment_date;";
+                ps1=MY_Connector.getConnection().prepareStatement(query);
+                ps1.setString(1, uname);
+                rs1=ps1.executeQuery();
+                 if(rs1.next())
+                {
+                 HttpSession ms1=request.getSession();
+                 ms.setAttribute("LogRset", rs1);
+                }
+                }
+                catch(Exception ex)
+                {
+                    Logger.getLogger(User_RegisterServ.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
            String s1=rs.getString("usertype");
            if(options.equalsIgnoreCase("Patient") && (s1.equalsIgnoreCase("patient")))
            {
