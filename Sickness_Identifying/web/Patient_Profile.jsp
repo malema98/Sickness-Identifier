@@ -95,13 +95,13 @@
                 
             </table>
                 
- <form method="POST" action="Patient_Update_infoServ" name="RegisterForm">
+ <form method="POST" action="Patient_UpdateServlet">
        
   <div class="container">
     <h5>Edit and update your details here</h5>
     <hr>
     <label for="name"><b>username :</b></label><br>
-    <input type="text" name="uname" value="=<%=rs.getString("USERNAME")%>" >
+    <input type="text" name="uname" value="<%=rs.getString("USERNAME")%>" >
     <br>
     <label for="pass"><b>Password :</b></label><br>
     <input type="password" value="<%=rs.getString("PASSWORD")%>" name="pass">
@@ -112,7 +112,7 @@
     <label for="regPword1"><b>Contacts Number :</b></label><br>
     <input type="text" value="<%=rs.getString("CONTACTS")%>" name="contact" >
     <br>
-<button type="submit" class="registerbtn"><strong>Update Profile</strong></button>
+    <button type="submit" class="registerbtn" name="update"><strong>Update Profile</strong></button>
   </div>
 </form>
             

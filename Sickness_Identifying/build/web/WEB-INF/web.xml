@@ -33,6 +33,10 @@
         <servlet-class>Controllers.Doc_CancelServ</servlet-class>
 >>>>>>> Stashed changes
     </servlet>
+    <servlet>
+        <servlet-name>Patient_UpdateServlet</servlet-name>
+        <servlet-class>Controllers.Patient_UpdateServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SymptoServ</servlet-name>
         <url-pattern>/SymptoServ</url-pattern>
@@ -65,6 +69,10 @@
         <servlet-name>Doc_CancelServ</servlet-name>
         <url-pattern>/Doc_CancelServ</url-pattern>
 >>>>>>> Stashed changes
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Patient_UpdateServlet</servlet-name>
+        <url-pattern>/Patient_UpdateServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
