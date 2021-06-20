@@ -4,10 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/web/Patient_Profile.jsp</file>
-            <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/src/java/Controllers/ResultsServ.java</file>
+            <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/src/java/Controllers/Patient_ProfileServ.java</file>
             <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/src/java/Controllers/Doctor_view_AppServ.java</file>
             <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/src/java/Controllers/LoginServ.java</file>
             <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/web/Doctor_View_Appointments.jsp</file>
+            <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/web/Book_Appoitment.jsp</file>
+            <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/src/java/Controllers/Appointment_BookingServ.java</file>
+            <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/web/PatientPage.jsp</file>
+            <file>file:/C:/Users/CHRIS%20MALEMA/Documents/UNIVERSITY%20OF%20PRETORIA/COS730/PROJECT/Sickness-Identifier/Sickness_Identifying/web/Patient_Cancel_App.jsp</file>
         </group>
     </open-files>
 </project-private>
