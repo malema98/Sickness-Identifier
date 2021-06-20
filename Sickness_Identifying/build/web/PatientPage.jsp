@@ -79,10 +79,10 @@
             <table align='left'>
                 <tr><td><a href="Patient_Profile.jsp"><button type="button">My Profile</button></a></td></tr>
                 <tr><td><a href="Patient_Edit_Information.jsp"><button type="button">Update Profile</button></a></td></tr>
-                <tr><td><a href="About.jsp"><button type="button">News</button></a></td></tr>
+                <tr><td><a href=https://www.nhsinform.scot/illnesses-and-conditions/a-to-z  target="_blank"><button type="button">Common Diseases in Human</button></a></td></tr>
                 <tr><td><a href="Book_Appoitment.jsp"><button type="button">Book for Appointment</button></a></td></tr>
                 <tr><td><a href="GuestBookingPage.jsp"><button type="button">My Bookings</button></a></td></tr>
-                <tr><td><a href="LoginPage.jsp"><button type="button" class="out">Log Out</button></a></td></tr>
+                <tr><td><a href="Login.html"><button type="button" class="out">Log Out</button></a></td></tr>
             </table>
             
             <center>

@@ -73,9 +73,21 @@
     <button type="submit" class="registerbtn"><strong>Register</strong></button>
   </div>
 
-        
-        
         </form>
     </center>
+          <center>
+        <div class="f">
+                <center>
+        
+                <p>Connect With Us</p>
+                <a href="https://www.facebook.com"><img src="images/facebook.png" style="width: 5%; height: 5%;"></a>
+                <a href="https://www.instagram.com"><img src="images/instagram.png" style="width: 5%; height: 5%;"></a>
+                <a href="https://www.twitter.com"><img src="images/twitter.png" style="width: 5%; height: 5%;"></a>
+                <a href="https://www.gmail.com"><img src="images/gmail.png" style="width: 5%; height: 5%;"></a>
+            <br>
+            Sickness Identifier System By: CHRIS MALEMA 
+                </center>
+            </div>
+        </center>
     </body>
 </html>
