@@ -28,6 +28,10 @@
         <servlet-name>Doctor_Cancel_AppServ</servlet-name>
         <servlet-class>Controllers.Doctor_Cancel_AppServ</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Patient_UpdateServlet</servlet-name>
+        <servlet-class>Controllers.Patient_UpdateServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SymptoServ</servlet-name>
         <url-pattern>/SymptoServ</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>Doctor_Cancel_AppServ</servlet-name>
         <url-pattern>/Doctor_Cancel_AppServ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Patient_UpdateServlet</servlet-name>
+        <url-pattern>/Patient_UpdateServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
