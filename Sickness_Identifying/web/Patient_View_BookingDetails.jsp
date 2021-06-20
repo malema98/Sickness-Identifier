@@ -75,7 +75,7 @@ th {
 </table>
     <br>
     <center>
-        <a href="Doctor_Cancel_App.jsp">Click here to delete an appointment</a><br><br>
+        <a href="Patient_Cancel_App.jsp">Click here to delete an appointment</a><br><br>
     <a href="Login.html" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
     </center>
     </body>

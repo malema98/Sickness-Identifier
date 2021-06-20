@@ -113,8 +113,8 @@ img
       <h1 ><strong>CANCEL AN APPOINTMENT</strong></h1>
     <hr>
     <i class="fa fa-user" aria-hidden="true"></i>
-    <label for="uname"><b>USERNAME  :</b></label><br>
-  <input type="text" name="uname" placeholder="Please enter your username">
+    <label for="uname"><b>APPOINTMENT ID :</b></label><br>
+    <input type="text" placeholder="Enter the appointment ID to delete" name="App_ID" required=""> 
     <hr>
 
     <i class="fa fa-user" aria-hidden="true"></i>
