@@ -26,7 +26,7 @@
    <center>
         <h3>Date : <%=formatter.format(date)%></h3>
         <h3>Welcome : <%=lbn[0].getUsername()%></h3>
-        <h4> <a href="index.html"><Strong>Click here to Logout</Strong></a> </h4>
+        <h4> <a href="Login.html"><Strong>Click here to Logout</Strong></a> </h4>
 
     </center>
         </div>
