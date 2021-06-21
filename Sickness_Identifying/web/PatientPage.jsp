@@ -86,7 +86,7 @@
             </table>
             
             <center>
-            <img src="images/img1.jpg"
+            <img src="images/doc1.jpg"
         </center>
             
         <center>
