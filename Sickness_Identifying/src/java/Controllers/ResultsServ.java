@@ -33,12 +33,14 @@ public class ResultsServ extends HttpServlet
 
         PreparedStatement ps;
         ResultSet rs;
-        String query ="SELECT sicknesses.sickness_name, symptoms.name FROM sicknesses,symptoms WHERE symptoms.symptoms_id=1;";
+
+        String query =" SELECT sicknesses.sickness_name, symptoms.name,causes.tuberculosis,treatment.tuberculosis FROM sicknesses,symptoms,causes,treatment WHERE symptoms.symptoms_id=2 and sicknesses.list_sickness= '1,2,3,4,5'  ";
+        
         try
         {
           ps=MY_Connector.getConnection().prepareStatement(query);
           rs=ps.executeQuery(query);
-          
+
         HttpSession hs=request.getSession(true);
         hs.setAttribute("Syp", rs);
        RequestDispatcher rd = request.getRequestDispatcher("Results.jsp");

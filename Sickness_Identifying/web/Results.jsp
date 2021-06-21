@@ -36,14 +36,19 @@ th {
     cursor: pointer;
     position: fixed;
 }
+.f{
+                background-color: #ddd;
+}
 </style>
-        <title>JSP Page</title>
+        <title>Results | Sickness identifier</title>
     </head>
     <body>
         <table cellpadding="1"  cellspacing="1" border="1" bordercolor="gray">
          <tr>
             <th>SYMPTOMS</th>
-            <th>SICKNESS</th>
+            <th>SICKNESS NAME</th>
+            <th>CAUSES</th>
+            <th>TREATMENT</th>
          </tr>
          <%
          HttpSession h = request.getSession();
@@ -55,8 +60,16 @@ th {
   <tr>
       <td><%=rs.getString("name") %></td>
       <td><%=rs.getString("sickness_name") %></td>
+      <td><%=rs.getString("tuberculosis") %></td>
+      <td><%=rs.getString("tuberculosis") %></td>
   </tr>
   <%}%>
       </table>
-    </body>
+    <center>
+      <a href="https://www.nhs.uk/conditions/tuberculosis-tb/causes/" target="_blank" >Click here for details about tuberculosis causes</a><br><br>
+      <a href="https://www.cdc.gov/tb/topic/treatment/tbdisease.htm" target="_blank">Click here for details about tuberculosis treatment</a><br><br>
+      <a href="https://www.google.co.za/maps" target="_blank" >Click here to locate the nearest hospital near </a><br><br><br>
+    </center>
+
+      </body>
 </html>
