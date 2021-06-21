@@ -23,10 +23,10 @@
 /* Styling the Body element i.e. Color,
         Font, Alignment */
         body {
-            background-color: #05c46b;
+            background-color: burlywood;
             font-family: Verdana;
-            text-align: center;
-        }
+            text-align: center;     }
+        
  
         /* Styling the Form (Color, Padding, Shadow) */
         form {
@@ -84,7 +84,7 @@
         }
     </style>
     </head>
-    <body>
+    <body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/background.jpeg);">
         <%
         HttpSession h = request.getSession();
         ResultSet rs = (ResultSet)h.getAttribute("sypmto");
