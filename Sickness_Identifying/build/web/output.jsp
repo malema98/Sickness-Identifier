@@ -58,5 +58,8 @@ th
                 </tr>
             </table>
         </form>
+                <br>
+                <br>
+                 <a href="Login.html" style="margin-top: 40%;"><Strong>Click here to Logout</Strong></a>
     </body>
 </html>
